@@ -126,8 +126,6 @@ def main():
     #batch_size was parsed as str to handle edge cases — convert to int
     args.batch_size = int(args.batch_size)
 
-    #hidden_size is now already a list of ints from nargs='+'
-    #but if somehow it's a string (e.g. loaded from config), handle it
     if isinstance(args.hidden_size, str):
         clean = args.hidden_size.replace('[', '').replace(']', '').replace(',', ' ')
         args.hidden_size = [int(x) for x in clean.split()]
