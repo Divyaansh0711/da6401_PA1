@@ -1,0 +1,19 @@
+{
+    "wandb_project": "DA6401_assignment_1",
+    "dataset": "mnist",
+    "epochs": 15,
+    "batch_size": 32,
+    "loss": "cross_entropy",
+    "optimizer": "rmsprop",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "num_layers": 3,
+    "hidden_size": [
+        128,
+        128,
+        128
+    ],
+    "activation": "relu",
+    "weight_init": "xavier",
+    "model_path": null
+}
