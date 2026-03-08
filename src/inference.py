@@ -10,7 +10,6 @@ from ann.neural_network import NeuralNetwork
 
 def parse_arguments():
     """
-    CRITICAL: This function MUST be named parse_arguments().
     The autograder calls inference.parse_arguments() directly.
     Same CLI as train.py per updated spec, with best config as defaults.
     """
@@ -66,7 +65,6 @@ def parse_arguments():
                         default=3,
                         help="Number of hidden layers")
 
-    # CRITICAL FIX: nargs='+' matches how autograder passes hidden_size
     parser.add_argument("-sz", "--hidden_size",
                         nargs='+',
                         type=int,

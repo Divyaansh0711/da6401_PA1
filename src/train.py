@@ -92,8 +92,8 @@ def parse_arguments():
                         default=3,
                         help="Number of hidden layers")
 
-    # CRITICAL FIX: nargs='+' so autograder can pass --hidden_size 128 64
-    # instead of a single quoted string
+    #nargs='+' so autograder can pass --hidden_size 128 64
+    #instead of a single quoted string
     parser.add_argument("-sz", "--hidden_size",
                         nargs='+',
                         type=int,
@@ -123,11 +123,11 @@ def parse_arguments():
 def main():
     args = parse_arguments()
 
-    # batch_size was parsed as str to handle edge cases — convert to int
+    #batch_size was parsed as str to handle edge cases — convert to int
     args.batch_size = int(args.batch_size)
 
-    # hidden_size is now already a list of ints from nargs='+'
-    # but if somehow it's a string (e.g. loaded from config), handle it
+    #hidden_size is now already a list of ints from nargs='+'
+    #but if somehow it's a string (e.g. loaded from config), handle it
     if isinstance(args.hidden_size, str):
         clean = args.hidden_size.replace('[', '').replace(']', '').replace(',', ' ')
         args.hidden_size = [int(x) for x in clean.split()]
