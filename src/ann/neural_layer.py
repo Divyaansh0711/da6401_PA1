@@ -38,27 +38,3 @@ class NeuralLayer:
         dx = np.dot(dz, self.W.T)
 
         return dx
-
-
-# testing this code
-# layer = NeuralLayer(784, 128)
-# x = np.random.randn(32, 784)
-# z = layer.forward(x)
-#
-# print(z.shape)   # Should be (32, 128)
-#
-# dz = np.random.randn(32, 128)
-# dx = layer.backward(dz)
-#
-# print(dx.shape)  # Should be (32, 784)
-# print(layer.grad_w.shape)  # (784, 128)
-# print(layer.grad_b.shape)  # (1, 128)
-
-
-# self.input_dim
-# self.output_dim
-# self.W - weight matrix size - (input_dim,output_dim)
-# self.b - bias vector - (1, output_dim)
-# self.grad_W - Gradient of loss w.r.t weights
-# self.grad_b - Gradient of loss w.r.t bias
-# self.input

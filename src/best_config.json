@@ -1,5 +1,5 @@
 {
-    "wandb_project": "DA6401_assignment_1",
+    "wandb_project": "da6401_sweep_5",
     "dataset": "mnist",
     "epochs": 15,
     "batch_size": 32,

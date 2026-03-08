@@ -55,11 +55,11 @@ class NeuralNetwork:
 
             prev_dim = hidden_dim
 
-        # ── OUTPUT LAYER ─────────────────────────────────────────────────────
+        #output layer
 
         self.layers.append(NeuralLayer(prev_dim, output_dim, weight_init))
 
-        # ── LOSS FUNCTION ────────────────────────────────────────────────────
+        #loss fnc
         if self.args.loss == "cross_entropy":
             self.loss = CrossEntropyLoss()
         elif self.args.loss == "mse":
@@ -67,9 +67,7 @@ class NeuralNetwork:
         else:
             raise ValueError(f"Invalid loss: {self.args.loss}")
 
-        # ── OPTIMIZER ────────────────────────────────────────────────────────
-        # Weight decay is passed to the optimizer and applied during update step,
-        # NOT inside backward(). This keeps pure loss gradients for gradient checking.
+        #optimiser
         lr  = float(self.args.learning_rate)
         wd  = float(self.args.weight_decay)
         opt = self.args.optimizer

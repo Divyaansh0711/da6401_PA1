@@ -1,5 +1,6 @@
 import numpy as np
 
+#defining all activations needed
 class ReLU:
 
     def __init__(self):
@@ -51,9 +52,6 @@ class Softmax:
     def backward(self, dz):
         return dz
 
-# relu = ReLU()
-# x = np.array([-1,2,-3])
-# print(relu.forward(x))
 
 
 
